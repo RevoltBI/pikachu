@@ -19,7 +19,7 @@ MTG-sorter project for Canadians
     1. Use virtual environment in shell
         linux/osx:      
         ```sh
-        source $(poetry env info --path)/bin/activate
+        source /home/pi/.cache/pypoetry/virtualenvs/pikachu*/bin/activate
         ```
 
 4. Set up some variables like `pin` and ``interval`` in src/configuration/config.cfg
