@@ -6,7 +6,7 @@ authors = ["Dmytro <molokoiedov.95@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
-Adafruit-GPIO = "1.0.3"
+"RPi.GPIO" = "^0.7.0"
 
 [tool.poetry.dev-dependencies]
 
