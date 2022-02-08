@@ -51,8 +51,13 @@ if __name__ == '__main__':
     setup_logging(config)
     device = GPIOSensor(name="device", pin=config.pin, out_mode=True)
     choices = [0, 1]
+    command = random.choice(choices)
+    start_time = time.time()
+    device.update_value(command)
+    logger.info(f"Sending command {command}")
     while True:
-        command = random.choice(choices)
-        logger.info(f"Sending command {command}")
-        device.update_value(command)
-        time.sleep(config.interval)
+        if (time.time() - start_time) > config.interval:
+            command = random.choice(choices)
+            device.update_value(command)
+            start_time = time.time()
+            logger.info(f"Sending command {command}")
