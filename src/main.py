@@ -54,10 +54,12 @@ if __name__ == '__main__':
     command = random.choice(choices)
     start_time = time.time()
     device.update_value(command)
-    logger.info(f"Sending command {command}")
     while True:
-        if (time.time() - start_time) > config.interval:
-            command = random.choice(choices)
+        if (time.time() - start_time) < config.duration:
             device.update_value(command)
+        else:
+            logger.info(f"Stop sending command {command}")
+            command = random.choice(choices)
+            time.sleep(config.interval)
             start_time = time.time()
             logger.info(f"Sending command {command}")

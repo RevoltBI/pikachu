@@ -15,6 +15,7 @@ class Config:
             'root_dir': '/opt/pikachu',
             'pin': 14,
             'interval': 0.5,
+            'duration': 0.05,
             'log_dir': '%(root_dir)s/logs',
             'debug': False,
             'log_format': '{"timestamp": "%%(asctime)s", "level": "%%(levelname)s", "filename":  "%%(filename)s", '
@@ -41,6 +42,10 @@ class Config:
     @property
     def interval(self):
         return self.__config.getfloat(self.__section, 'interval')
+
+    @property
+    def duration(self):
+        return self.__config.getfloat(self.__section, 'duration')
 
     @property
     def log_dir(self):
