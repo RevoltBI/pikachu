@@ -12,7 +12,7 @@ class Config:
         self.__section = section
         # Fill in default values
         self.__config['DEFAULT'] = {
-            'root_dir': '/opt/pikachu',
+            'root_dir': '/home/pi/pikachu',
             'pin': 14,
             'interval': 0.5,
             'duration': 0.05,

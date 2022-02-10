@@ -39,7 +39,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '-c', '--config',
         nargs='?',
-        default="/opt/pikachu/src/configuration/config.cfg",
+        default="/home/pi/pikachu/src/configuration/config.cfg",
         type=str,
         required=False,
         help='Path to the configuration file',
